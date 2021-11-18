@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,7 +12,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { HomeScreenComponent } from './home-screen/home-screen.component';
 import {MatToolbarModule} from "@angular/material/toolbar";
 import { MatIconModule} from "@angular/material/icon";
-import {MatInputModule} from "@angular/material/input";
+import {MatInputModule} from '@angular/material/input';
+
 
 
 @NgModule({
@@ -29,7 +31,9 @@ import {MatInputModule} from "@angular/material/input";
     FlexLayoutModule,
     MatInputModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    FormsModule, 
+    ReactiveFormsModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

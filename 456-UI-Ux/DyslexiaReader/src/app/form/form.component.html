@@ -1,13 +1,13 @@
-<div fxLayoutAlign="center center" fxFlexFill class="main-div">
-    <form form="stretch" fxLayout="column" class="login-form" fxFlex="75">
+<div fxLayoutAlign="center center" fxFlexFill class="main-div" fxLayout="column" form="stretch"> 
+    <form fxLayoutAlign="center center" fxLayout="column" class="text-form" [formGroup]="textForm" (ngSubmit)="onSubmit()">
         <mat-form-field appearance="fill">
-            <mat-label>Textarea</mat-label>
+            <mat-label>Convert Text</mat-label>
             <textarea matInput placeholder="Input text." class="input-text"></textarea>
-        </mat-form-field>
-        <mat-form-field appearance="fill">
-            <mat-label>Textarea</mat-label>
-            <textarea matInput placeholder="Output text." class="output-text"></textarea>
         </mat-form-field>
         <button mat-raised-button type="submit">Convert to Dyslexia Readable Text</button>
     </form>
+
+    <div class="output-text" [formGroup]="textForm" *ngIf="formFilled">
+        <h1>Hello</h1>
+    </div>
 </div>
