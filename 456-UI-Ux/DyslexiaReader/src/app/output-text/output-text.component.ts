@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-output-text',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OutputTextComponent implements OnInit {
 
-  constructor() { }
+  description:string;
 
-  ngOnInit(): void {
+  constructor(
+      @Inject(MAT_DIALOG_DATA) data: any) {
+
+      this.description = data.text;
+  }
+
+  ngOnInit() {
   }
 
 }

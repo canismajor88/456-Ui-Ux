@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { OutputTextComponent } from '../output-text/output-text.component';
 
 @Component({
@@ -11,7 +11,6 @@ import { OutputTextComponent } from '../output-text/output-text.component';
 export class FormComponent implements OnInit {
 
   textForm!: FormGroup;
-  formFilled: boolean = false;
   error = '';
 
   constructor(
@@ -35,12 +34,18 @@ export class FormComponent implements OnInit {
   }
 
   onSubmit(): void {
-    console.log("Working");
-    this.formFilled = !this.formFilled;
+    this.openDialog();
   }
 
   openDialog() {
-    this.dialog.open(OutputTextComponent);
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.data = {
+      text: this.textForm.get("text")
+  };
+    console.log(this.textForm);
+
+    this.dialog.open(OutputTextComponent, dialogConfig);
   }
 
 }
