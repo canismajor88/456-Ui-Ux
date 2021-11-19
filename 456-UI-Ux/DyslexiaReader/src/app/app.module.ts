@@ -13,6 +13,9 @@ import { HomeScreenComponent } from './home-screen/home-screen.component';
 import {MatToolbarModule} from "@angular/material/toolbar";
 import { MatIconModule} from "@angular/material/icon";
 import {MatInputModule} from '@angular/material/input';
+import {MatDialogModule} from '@angular/material/dialog';
+import { OutputTextComponent } from './output-text/output-text.component';
+
 
 
 
@@ -20,7 +23,8 @@ import {MatInputModule} from '@angular/material/input';
   declarations: [
     AppComponent,
     HomeScreenComponent,
-    FormComponent
+    FormComponent,
+    OutputTextComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +37,8 @@ import {MatInputModule} from '@angular/material/input';
     MatToolbarModule,
     MatIconModule,
     FormsModule, 
-    ReactiveFormsModule 
+    ReactiveFormsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

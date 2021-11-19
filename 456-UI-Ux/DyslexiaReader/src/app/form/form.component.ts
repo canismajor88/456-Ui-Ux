@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { OutputTextComponent } from '../output-text/output-text.component';
 
 @Component({
   selector: 'app-form',
@@ -13,7 +15,8 @@ export class FormComponent implements OnInit {
   error = '';
 
   constructor(
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    public dialog: MatDialog
   ) {}
 
   ngOnInit(): void {
@@ -34,6 +37,10 @@ export class FormComponent implements OnInit {
   onSubmit(): void {
     console.log("Working");
     this.formFilled = !this.formFilled;
+  }
+
+  openDialog() {
+    this.dialog.open(OutputTextComponent);
   }
 
 }
