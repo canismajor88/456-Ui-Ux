@@ -20,9 +20,7 @@ export class FormComponent implements OnInit {
 
   ngOnInit(): void {
     this.textForm = this.formBuilder.group({
-      text: ['', [
-        Validators.required,
-      ]]
+      text: ['']
     });
     this.onChanges();
   }
@@ -41,11 +39,16 @@ export class FormComponent implements OnInit {
     const dialogConfig = new MatDialogConfig();
 
     dialogConfig.data = {
-      text: this.textForm.get("text")
+      text: this.text?.value
   };
-    console.log(this.textForm);
 
     this.dialog.open(OutputTextComponent, dialogConfig);
+
+    this.textForm.reset();
+  }
+
+  get text() {
+    return this.textForm.get('text');
   }
 
 }

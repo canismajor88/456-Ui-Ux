@@ -2,7 +2,7 @@
     <form fxLayout="column" class="text-form" [formGroup]="textForm" (ngSubmit)="onSubmit()">
         <mat-form-field appearance="fill">
             <mat-label>Convert Text</mat-label>
-            <textarea matInput placeholder="Input text." class="input-text"></textarea>
+            <textarea matInput placeholder="Input text." class="input-text" formControlName="text"></textarea>
         </mat-form-field>
         <button mat-raised-button type="submit">Convert to Dyslexia Readable Text</button>
     </form>
