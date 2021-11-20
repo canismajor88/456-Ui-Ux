@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { OutputTextComponent } from '../output-text/output-text.component';
 
 @Component({
   selector: 'app-form',
@@ -7,9 +10,45 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormComponent implements OnInit {
 
-  constructor() { }
+  textForm!: FormGroup;
+  error = '';
+
+  constructor(
+    private formBuilder: FormBuilder,
+    public dialog: MatDialog
+  ) {}
 
   ngOnInit(): void {
+    this.textForm = this.formBuilder.group({
+      text: ['']
+    });
+    this.onChanges();
+  }
+
+  onChanges(): void {
+    this.textForm.valueChanges.subscribe(() => {
+      this.error ? this.error = '' : null;
+    })
+  }
+
+  onSubmit(): void {
+    this.openDialog();
+  }
+
+  openDialog() {
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.data = {
+      text: this.text?.value
+  };
+
+    this.dialog.open(OutputTextComponent, dialogConfig);
+
+    this.textForm.reset();
+  }
+
+  get text() {
+    return this.textForm.get('text');
   }
 
 }
