@@ -15,6 +15,7 @@ import { MatIconModule} from "@angular/material/icon";
 import {MatInputModule} from '@angular/material/input';
 import {MatDialogModule} from '@angular/material/dialog';
 import { OutputTextComponent } from './output-text/output-text.component';
+import {MatButtonModule} from '@angular/material/button'
 
 
 
@@ -38,7 +39,8 @@ import { OutputTextComponent } from './output-text/output-text.component';
     MatIconModule,
     FormsModule, 
     ReactiveFormsModule,
-    MatDialogModule
+    MatDialogModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
