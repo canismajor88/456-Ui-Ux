@@ -4,6 +4,14 @@
             <mat-label>Convert Text</mat-label>
             <textarea matInput placeholder="Input text." class="input-text" formControlName="text"></textarea>
         </mat-form-field>
-        <button mat-raised-button type="submit">Convert to Dyslexia Readable Text</button>
+        <button mat-raised-button 
+        class="submit" 
+        color="primary"
+        [disabled]=handleDisable()>
+            Convert to Dyslexia Readable Text
+        </button>
     </form>
+</div>
+<div class="output-text">
+
 </div>

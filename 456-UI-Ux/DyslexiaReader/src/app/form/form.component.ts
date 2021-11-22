@@ -51,4 +51,13 @@ export class FormComponent implements OnInit {
     return this.textForm.get('text');
   }
 
+  handleDisable(): boolean {
+    if (this.text?.value != "") {
+      return false;
+    }
+    else {
+      return true;
+    }
+  }
+
 }
