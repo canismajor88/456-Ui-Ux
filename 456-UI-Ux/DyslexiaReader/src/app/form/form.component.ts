@@ -75,4 +75,7 @@ export class FormComponent implements OnInit {
     return this.textForm.get('text');
   }
 
+  play() {
+    this.synth.resume
+  }
 }
