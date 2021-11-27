@@ -1,17 +1,44 @@
-<div fxLayoutAlign="center" fxFlexFill class="main-div" fxLayout="column" form="stretch" >
-    <form fxLayout="column" class="text-form" [formGroup]="textForm" (ngSubmit)="onSubmit()">
-        <mat-form-field appearance="fill">
-            <mat-label>Convert Text</mat-label>
-            <textarea matInput placeholder="Input text." class="input-text" formControlName="text"></textarea>
-        </mat-form-field>
-        <button mat-raised-button class="readerFormButton" type="submit">Convert to Dyslexia Readable Text</button>
+<div class="container" style="margin-top: 8%">
+  <div class="row">
+    <div class="card text-dark bg-light mb-5 border-info">
 
-    </form>
-  <p> </p>
-  <button mat-raised-button class="readerFormButton" (click)="speak()">Read Text</button>
+      <div class="row mb-5 mt-0 ">
+        <div class="col-1"></div>
+        <div class="col-10 mb-1 align-self-center ">
+          <form  style=" border-style: groove;"  fxLayout="column" class="text-form " [formGroup]="textForm">
+            <div class="row">
+              <mat-form-field >
+                <mat-label>Convert Text</mat-label>
+                <textarea matInput placeholder="Input text." rows="10" cols="80" style="background-color: white;" formControlName="text"></textarea>
+              </mat-form-field>
+            </div>
+           <div class="row mb-1 mt-1 mx-5">
+             <button mat-raised-button class="btn btn-primary"  type="submit" (click)="onSubmit()">Convert to Dyslexia Readable Text <i class="bi bi-pencil-fill"></i></button>
+           </div>
+            <div class="row mx-5">
+              <div class="col-1">
+              </div>
+              <div class="col-2">
+              </div>
+              <div class="col-2">
+                <button style="margin-left: 40%"    class="btn btn-secondary" (click)="speak()">Read<i class="bi bi-volume-up-fill"></i></button>
+              </div>
+              <div class="col-2">
+                <button style="margin-left: 15%"  class="btn btn-secondary" (click)="pause()">Pause<i class="bi bi-pause-btn-fill"></i></button>
+              </div>
+              <div class="col-2">
+                <button   class="btn btn-secondary" (click)="play()">Play<i class="bi bi-file-play-fill"></i></button>
+              </div>
+            </div>
+          </form>
 
-  <p> </p>
-  <button mat-raised-button class="readerFormButton" (click)="pause()">Pause</button>
-  <p> </p>
-  <button mat-raised-button class="readerFormButton" (click)="play()">Play</button>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
 </div>
+
+
+
