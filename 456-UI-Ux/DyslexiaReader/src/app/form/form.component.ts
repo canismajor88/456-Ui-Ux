@@ -76,6 +76,6 @@ export class FormComponent implements OnInit {
   }
 
   play() {
-    this.synth.resume
+    this.synth.resume()
   }
 }
