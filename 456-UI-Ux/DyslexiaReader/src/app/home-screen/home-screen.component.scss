@@ -14,3 +14,45 @@
   font-weight: bolder ;
   font-size: xxx-large
 }
+
+.about {
+  padding : 10px;
+  width: 80%;
+  margin: auto;
+}
+
+.col {
+  padding-top: 10px;
+}
+
+h1, h2, p {
+  font-family: OpenDyslexic3, serif;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+h1 {
+  text-decoration: underline;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+h2 {
+  font-weight: bold;
+  padding-top: 20px;
+  font-size: 20px;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.5;
+  text-align: justify;
+}
+
+iframe {
+  display: block;
+  margin: auto;
+  padding-bottom: 10px;
+}
